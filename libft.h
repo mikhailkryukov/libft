@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkryukov <mkryukov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 09:58:03 by mkryukov          #+#    #+#             */
-/*   Updated: 2018/11/30 11:27:15 by mkryukov         ###   ########.fr       */
+/*   Updated: 2018/11/30 11:24:31 by mkryukov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int count;
+#ifndef LIBFT_H
+# define LIBFT_H
 
-	count = 0;
-	while (str[count] != '\0')
-	{
-		count++;
-	}
-	return (count);
-}
+# include <unistd.h>
+# include <stdio.h>
+
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+int		ft_strlen(char *str);
+
+#endif

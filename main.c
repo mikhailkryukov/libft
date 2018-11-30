@@ -1,8 +1,7 @@
-#include<stdio.h>
-#include"header.h"
+#include"libft.a"
 
 int main()
 {
-    printf("%d", ft_strlen("Hello"));
+	printf("%d", ft_strlen("Hello"));
 	return 0;
 }
