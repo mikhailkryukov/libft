@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkryukov <mkryukov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 09:58:03 by mkryukov          #+#    #+#             */
-/*   Updated: 2018/12/03 10:29:51 by mkryukov         ###   ########.fr       */
+/*   Updated: 2018/12/04 16:09:43 by mkryukov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	int		rez;
-	int		i;
-	char	sign;
+	int i;
+	char *str;
+
+	str = (char *)malloc(sizeof(1 + ft_strlen((char*)s1) + ft_strlen((char*)s2)));
 
 	i = 0;
-	rez = 0;
-	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t')
+	while (*s1 != '\0')
 	{
-		i++;
+		str[i] = *s1;
+		s1++;
 	}
 
-	if (str[i] == '-')
+	while (*s2 != '\0')
 	{
-		sign = -1;
-		i++;
+		str[i] = *s2;
+		s2++;
 	}
 
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		rez = rez * 10 + (str[i] - '0');
-		i++;
-	}
-	return (rez * sign);
+	str[i] = '\0';
+
+	return (str);
+}
+
+int		main(void)
+{
+
+
+	printf("%s\n", ft_strcat("my ", "test"));
+	printf("%s", strcat("my ", "test"));
+	return (0);
 }
